@@ -8,6 +8,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
+import java.util.Date;
 
 public class CreditForm {
 	private static final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
@@ -74,6 +77,15 @@ public class CreditForm {
 		formToolkit.adapt(password, true, true);
 		
 		Button btnEnviar = new Button(shell, SWT.NONE);
+		btnEnviar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDoubleClick(MouseEvent e) {
+				CreditInfoStore creditCard = new CreditInfoStore("Visa", card_holder.getText(), 
+						Integer.parseInt(card_number.getText()), 
+						Date.parse(expiry_date.getText()), 
+						password.getText());
+			}
+		});
 		btnEnviar.setBounds(121, 224, 75, 25);
 		formToolkit.adapt(btnEnviar, true, true);
 		btnEnviar.setText("Enviar");

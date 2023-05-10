@@ -4,12 +4,14 @@ import java.util.Date;
 
 public class CreditInfoStore {
 
+	private String brand;
 	private String owner;
 	private Integer cardNumber;
-	private Date expiry;
+	private long expiry;
 	private String password;
 	
-	public CreditInfoStore(String owner, Integer cardNumber, Date expiry, String password) {
+	public CreditInfoStore(String brand, String owner, Integer cardNumber, long expiry, String password) {
+		this.setBrand(brand);
 		this.setOwner(owner);
 		this.setCardNumber(cardNumber);
 		this.setExpiry(expiry);
@@ -32,11 +34,11 @@ public class CreditInfoStore {
 		this.cardNumber = cardNumber;
 	}
 
-	public Date getExpiry() {
+	public long getExpiry() {
 		return expiry;
 	}
 
-	public void setExpiry(Date expiry) {
+	public void setExpiry(long expiry) {
 		this.expiry = expiry;
 	}
 
@@ -46,5 +48,13 @@ public class CreditInfoStore {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
 }
