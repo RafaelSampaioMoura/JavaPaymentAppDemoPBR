@@ -84,6 +84,7 @@ public class CreditForm {
 						Integer.parseInt(card_number.getText()), 
 						Date.parse(expiry_date.getText()), 
 						password.getText());
+				creditCard.printInfo();
 			}
 		});
 		btnEnviar.setBounds(121, 224, 75, 25);

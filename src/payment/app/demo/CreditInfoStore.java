@@ -57,4 +57,11 @@ public class CreditInfoStore {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+	
+	public void printInfo() {
+		System.out.print(this.brand + " " + 
+				this.cardNumber + " " + 
+				this.expiry + " " + 
+				this.owner + " " + this.password);
+	}
 }
