@@ -18,6 +18,7 @@ public class CreditForm {
 	private static Text card_number;
 	private static Text expiry_date;
 	private static Text password;
+	// PRB PC version
 
 	/**
 	 * Launch the application.
